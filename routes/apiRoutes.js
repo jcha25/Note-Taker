@@ -13,4 +13,9 @@ router.post("/notes", (req, res) => {
     res.json(note)
 })
 
+router.delete("/notes/:id", (req, res) => {
+    readAndDelete(req.params.id, "./db/db.json")
+    res.json(true)
+})
+
 module.exports = router;
